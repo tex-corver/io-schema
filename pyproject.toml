@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "io-schema"
+version = "0.1.0"
+description = ""
+authors = ["lle <hjjddbz@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "io_schema" }]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pydantic = "^2.7.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
