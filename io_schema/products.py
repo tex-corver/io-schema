@@ -3,16 +3,21 @@ from typing import Optional
 
 import pydantic
 
-__all__ = ["ProductBase", "ProductSchema", "ProductResponse"]
+__all__ = [
+    "ProductBase",
+    "ProductSchema",
+    "ProductResponse",
+    "ProductListResponse",
+]
 
 
 class ProductBase(pydantic.BaseModel):
     model_config = pydantic.ConfigDict(from_attributes=True)
 
-    name: Optional[str]
-    description: Optional[str]
-    price: Optional[float]
-    image: Optional[str]
+    name: Optional[str] = None
+    description: Optional[str] = None
+    price: Optional[float] = None
+    image: Optional[str] = None
 
 
 class ProductSchema(ProductBase):
@@ -27,3 +32,9 @@ class ProductResponse(pydantic.BaseModel):
     model_config = pydantic.ConfigDict(from_attributes=True)
 
     product: ProductSchema
+
+
+class ProductListResponse(pydantic.BaseModel):
+    model_config = pydantic.ConfigDict(from_attributes=True)
+
+    products: list[ProductSchema]
