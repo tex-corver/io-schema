@@ -2,7 +2,7 @@ import importlib
 
 import pytest
 
-# import io_schema
+from io_schema import *
 
 
 @pytest.mark.parametrize(
