@@ -10,6 +10,7 @@ packages = [{ include = "io_schema", from = "src" }]
 python = "^3.12"
 pydantic = "^2.7.4"
 pytest = "8.2.2"
+tex-corver-core = {git = "git@github.com:tex-corver/core.git"}
 
 
 [build-system]
