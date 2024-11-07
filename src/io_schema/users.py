@@ -128,17 +128,6 @@ class Login(pydantic.BaseModel):
     username: str
     password: str
 
-    @pydantic.model_validator(mode="after")
-    def verify_email_or_phone_number(self) -> Self:
-        if self.email is None and self.phone_number is None:
-            raise ValueError("email or phone_number must be provided")
-
-        if self.email is not None and self.phone_number is not None:
-            raise ValueError(
-                "email and phone_number cannot be provided at the same time"
-            )
-
-        return self
 
 
 class Address(pydantic.BaseModel):
