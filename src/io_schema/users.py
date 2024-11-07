@@ -129,7 +129,6 @@ class Login(pydantic.BaseModel):
     password: str
 
 
-
 class Address(pydantic.BaseModel):
     """
     Address.
@@ -224,7 +223,7 @@ class TokenResponse(pydantic.BaseModel):
 
 
 class LoggedInUser(User):
-    token: Token
+    token: str
 
 
 class LoginResponse(pydantic.BaseModel):
