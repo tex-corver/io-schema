@@ -125,10 +125,8 @@ class Login(pydantic.BaseModel):
     Login.
     """
 
-    email: str | None = None
-    phone_number: str | None = None
+    username: str
     password: str
-    device_id: Optional[str] = None
 
     @pydantic.model_validator(mode="after")
     def verify_email_or_phone_number(self) -> Self:
@@ -168,7 +166,6 @@ class ShippingProfileBase(pydantic.BaseModel):
     name: Optional[str] | None = None
     receiver: Optional[Receiver] | None = None
     address: Address | None = None
-
 
 
 import pydantic
