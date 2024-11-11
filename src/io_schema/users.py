@@ -264,3 +264,14 @@ class ListShippingProfileResponse(pydantic.BaseModel):
     )
 
     shipping_profiles: list[ShippingProfile]
+
+
+class AuthorizationContext(pydantic.BaseModel):
+    model_config = pydantic.ConfigDict(
+        from_attributes=True,
+        use_enum_values=True,
+        extra="allow",
+    )
+
+    user_id: str
+    device_id: str | None = None
