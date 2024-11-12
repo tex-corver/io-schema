@@ -9,13 +9,13 @@ from typing import Optional
 
 import pydantic
 
-from io_schema import products
+from io_schema import product
 
 
 class ItemMetadata(pydantic.BaseModel):
     model_config = pydantic.ConfigDict(from_attributes=True)
 
-    product: products.Product | None = None
+    product: product.Product | None = None
 
 
 class ItemBase(pydantic.BaseModel):

@@ -5,7 +5,7 @@ import pydantic
 
 __all__ = [
     "ProductBase",
-    "ProductSchema",
+    "Product",
     "ProductResponse",
     "ProductListResponse",
 ]
@@ -20,7 +20,7 @@ class ProductBase(pydantic.BaseModel):
     image: Optional[str] = None
 
 
-class ProductSchema(ProductBase):
+class Product(ProductBase):
     model_config = pydantic.ConfigDict(from_attributes=True, extra="allow")
 
     id: str
@@ -31,10 +31,10 @@ class ProductSchema(ProductBase):
 class ProductResponse(pydantic.BaseModel):
     model_config = pydantic.ConfigDict(from_attributes=True)
 
-    product: ProductSchema
+    product: Product
 
 
 class ProductListResponse(pydantic.BaseModel):
     model_config = pydantic.ConfigDict(from_attributes=True)
 
-    products: list[ProductSchema]
+    products: list[Product]

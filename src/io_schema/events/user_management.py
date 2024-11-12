@@ -1,7 +1,7 @@
 import core
 import pydantic
 
-from io_schema import users as user_schemas
+from io_schema import user as user_schemas
 
 
 class GeneratedOtpEvent(core.Event):

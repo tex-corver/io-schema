@@ -9,7 +9,7 @@ from io_schema import *
     "module_name",
     [
         "ProductBase",
-        "ProductSchema",
+        "Product",
         "ProductResponse",
     ],
 )
