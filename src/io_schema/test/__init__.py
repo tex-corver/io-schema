@@ -52,3 +52,17 @@ def make_product_line(**kwargs) -> product_schemas.ProductLine:
         images=images,
         options=grouped_options,
     )
+
+
+def make_product(
+    product_line: product_schemas.ProductLine | None = None,
+    options: dict[str, product_schemas.ProductLineOption] | None = None,
+) -> product_schemas.Product:
+    product_line: product_schemas.ProductLine = product_line or make_product_line()
+    options: dict[str, product_schemas.ProductLineOption] = options or {
+        kind: product_line.options[kind][0] for kind in product_line.options
+    }
+    return product_schemas.Product.from_product_line_and_options(
+        product_line=product_line,
+        options=options,
+    )

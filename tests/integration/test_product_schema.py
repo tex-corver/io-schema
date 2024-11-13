@@ -21,8 +21,10 @@ def test_product_line_schema(
     product_line: io_schema.ProductLine,
     options: dict[str, io_schema.ProductLineOption],
 ):
-    product = io_schema.Product.from_product_line_and_options(
+    product = io_schema.test.make_product(
         product_line,
         options,
     )
     ic(product)
+    assert product.product_line == product_line
+    assert product.options == options
