@@ -1,5 +1,4 @@
 __all__ = [
-    "ItemMetadataBase",
     "ItemBase",
     "Item",
     "ItemResponse",
