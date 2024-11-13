@@ -8,7 +8,6 @@ from io_schema import *
 @pytest.mark.parametrize(
     "module_name",
     [
-        "ProductBase",
         "Product",
         "ProductResponse",
     ],
