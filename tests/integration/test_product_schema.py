@@ -27,4 +27,4 @@ def test_product_line_schema(
     )
     ic(product)
     assert product.product_line == product_line
-    assert product.options == options
+    assert product.product_line_options == options
