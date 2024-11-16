@@ -1,14 +1,14 @@
+from datetime import datetime
+from typing import Optional
+
+import pydantic
+from io_schema import product as product_schemas
+
 __all__ = [
     "ItemBase",
     "Item",
     "ItemResponse",
 ]
-from datetime import datetime
-from typing import Optional
-
-import pydantic
-
-from io_schema import product as product_schemas
 
 
 class ItemMetadata(pydantic.BaseModel):

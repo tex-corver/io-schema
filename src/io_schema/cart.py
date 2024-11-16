@@ -1,8 +1,13 @@
 from datetime import datetime
 
 import pydantic
-
 from io_schema import item as item_schemas
+
+
+class CartItemsResponse(pydantic.BaseModel):
+    model_config = pydantic.ConfigDict(from_attributes=True)
+
+    items: list[item_schemas.Item] = pydantic.Field(default_factory=list)
 
 
 class CartBase(pydantic.BaseModel):
