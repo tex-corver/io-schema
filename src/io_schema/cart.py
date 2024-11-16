@@ -7,14 +7,14 @@ from io_schema import item as item_schemas
 class CartItemsResponse(pydantic.BaseModel):
     model_config = pydantic.ConfigDict(from_attributes=True)
 
-    items: list[item_schemas.Item] = pydantic.Field(default_factory=list)
+    items: dict[str, item_schemas.Item] = pydantic.Field(default_factory=dict)
 
 
 class CartBase(pydantic.BaseModel):
     model_config = pydantic.ConfigDict(from_attributes=True)
 
     user_id: str
-    items: list[item_schemas.Item] = pydantic.Field(default_factory=list)
+    items: dict[str, item_schemas.Item] = pydantic.Field(default_factory=dict)
 
 
 class Cart(CartBase):
