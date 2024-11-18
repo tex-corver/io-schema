@@ -3,5 +3,5 @@ from .events import *
 from .image import *
 from .item import *
 from .product import *
-from .user import *
+from .profile import *
 from .user import *
