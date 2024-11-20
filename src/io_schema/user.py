@@ -267,6 +267,11 @@ class ListShippingProfileResponse(pydantic.BaseModel):
     shipping_profiles: list[ShippingProfile]
 
 
+class Role(enum.StrEnum):
+    USER = "USER"
+    ADMIN = "ADMIN"
+
+
 class AuthorizationContext(pydantic.BaseModel):
     model_config = pydantic.ConfigDict(
         from_attributes=True,
@@ -275,4 +280,5 @@ class AuthorizationContext(pydantic.BaseModel):
     )
 
     user_id: str
+    role: Role = Role.USER
     device_id: str | None = None
