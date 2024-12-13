@@ -145,7 +145,7 @@ class Address(pydantic.BaseModel):
 
 class Receiver(pydantic.BaseModel):
     """
-    Recevier.
+    Receiver.
     """
 
     name: Optional[str] | None = None
@@ -269,8 +269,8 @@ class ListShippingProfileResponse(pydantic.BaseModel):
 
 
 class Role(enum.StrEnum):
-    USER = "USER"
-    ADMIN = "ADMIN"
+    USER = enum.auto()
+    ADMIN = enum.auto()
 
 
 class AuthorizationContext(pydantic.BaseModel):
