@@ -5,3 +5,4 @@ from .item import *
 from .product import *
 from .profile import *
 from .user import *
+from .entry import *
